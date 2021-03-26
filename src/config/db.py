@@ -5,7 +5,7 @@ config = {
     'port': 3308,
     'user': 'root',
     'password': '',
-    'database': 'flask_mvc'
+    'database': 'acortador_url'
 }
 
 DB = mariadb.connect(**config)
