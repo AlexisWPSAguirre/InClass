@@ -1,0 +1,16 @@
+{% extends 'layouts/base.html' %}
+
+{% block titulo %}
+    Acortador de link
+{% endblock %}
+
+{% block contenido %}
+<h1 style="text-align: center; color:blue">ACORTAR URL</h1>
+<form action="">
+    <div class="mb-3">
+        <label for="link">URL:</label>
+        <input type="text" id="link" name="link" class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Generar</button>
+</form>
+{% endblock %}
