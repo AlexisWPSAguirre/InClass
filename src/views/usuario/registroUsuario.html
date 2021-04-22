@@ -1,0 +1,31 @@
+{% extends 'layouts/base.html' %}
+
+{% block titulo %}
+    Registro Usuario
+{% endblock %}
+
+{% block contenido %}
+<div class="modal-dialog text-center">
+    <div class="col-9 main-section">
+        <div class="modal-content" style="background-color: gray;">
+            <div class="col-12 user-img">
+                <img src="../../static/img/panda.jpg">
+            </div>
+            <form action="{{url_for('registrarUsuario')}}" method="POST"> 
+                <div class="m-3" id="user-group">
+                    <input class="form-control" type="text" name="nombre" id="nombre" required placeholder="Nombre">
+                </div>
+                <div class="m-3" id="email-group">
+                    <input class="form-control" type="email" name="correo" id="correo" required placeholder="Correo Electronico">
+                </div>
+                <div class="m-3" id="contrasena-group">
+                    <input class="form-control" type="password" name="contrasena" id="contrasena" required placeholder="Contraseña">
+                </div>
+                <div class="m-3">
+                    <button class="btn btn-primary" type="submit">Registrarse</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

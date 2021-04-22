@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
+    <title>Confirmar Correo</title>
+</head>
+<body>
+    <body style="background-color: black ">
+
+        <!--Copia desde aquí-->
+        <table style="max-width: 600px; padding: 10px; margin:0 auto; border-collapse: collapse;">
+            <tr>
+                <td style="background-color: #ecf0f1; text-align: left; padding: 0">
+                    <a href="http://localhost:5000/">
+                        <img width="20%" style="display:block; margin: 1.5% 3%" src="https://i.postimg.cc/GmyKn3Fc/panda.jpg">
+                    </a>
+                </td>
+            </tr>            
+            <tr>
+                <td style="background-color: #ecf0f1">
+                    <div style="color: #34495e; margin: 4% 10% 2%; text-align: justify;font-family: sans-serif">
+                        <h2 style="color: #e67e22; margin: 0 0 7px">Hola {{session['nombre']}}</h2>
+                        <p style="margin: 2px; font-size: 15px">
+                            Has creado una cuenta en URL Shortener recientemente. <br>Tu correo es {{session['correo']}} <br>
+                            Para confirmar tu dirección de correo electrónico, haz clic en Confirmar<br>
+                            De lo contrario ignora este correo o da en el botón Cancelar<br>
+                        </p>
+                        <div style="width: 100%;margin:20px 0; display: inline-block;text-align: center">
+                            <a style="background:#7f8c8d;
+                            color:#fff;
+                            display:inline-block;
+                            font-size:1.25em;
+                            margin:5px;
+                            padding:10px 0;
+                            text-align:center;
+                            width:200px;
+                            text-decoration:none;
+                            box-shadow:0px 3px 0px #373c3c;
+                            border-radius: .25rem;" href="http://localhost:5000/Verificar/Registro/{{session['correo']}}">Confirmar</a>
+                            <a style="background:#c0625b;
+                            color:#fff;
+                            display:inline-block;
+                            font-size:1.25em;
+                            margin:5px;
+                            padding:10px 0;
+                            text-align:center;
+                            width:200px;
+                            text-decoration:none;
+                            box-shadow:0px 3px 0px #373c3c;
+                            border-radius: .25rem;" href="http://localhost:5000/Verificar/Registro/None">Cancelar</a>
+                            
+                        </div> 
+                    </div>   
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

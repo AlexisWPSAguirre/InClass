@@ -1,0 +1,68 @@
+{% extends 'layouts/base.html' %}
+
+{% block titulo %}
+    URL Shortener
+{% endblock %}
+
+{% block contenido %}
+<div class="text-center">
+    <div class="mt-5 main-section">
+        <div class="modal-content mb-4" style="background-color: gray;">
+            <div class="col-12 user-img">
+                <img src="../../static/img/panda.jpg">
+            </div>
+                <form  action="{{url_for('inicio')}}" method="POST">
+                    
+                    <div class="m-3">
+                        <input type="text" id="link" name="link" class="form-control" value='{{shortenedLink}}' required placeholder="Link que quieres acortar">
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4">
+                            <div class="m-3">
+                                <button class="btn btn-primary" type="submit">Generar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% if (myexample(linksUsuario)!=0)  %}
+    <table class="table table-striped">
+        <th>
+            <tr>
+                <th>ID</th>
+                <th>Link Acortado</th>
+                <th>Link Original</th>
+                <th></th>
+            </tr>
+        </th>
+        <tbody>
+            {% if link %}
+            <tr>
+                <form method="POST">  
+                    <td>Editar</td>
+                    <td><input class="form-control" type="text" id="shortenedLink" name="shortenedLink" value="{{link[1]}}" required></td>
+                    <td><input class="form-control" type="text" id="linkOriginal" name="linkOriginal" value="{{link[2]}}" required></td>
+                    <td><button class="btn btn-primary" type="submit">Guardar</button></td>
+                </form>
+            </tr>
+            {%endif %}
+            {% for element in linksUsuario %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{element[1]}}</td>
+                <td>{{element[2]}}</td>
+                <td>
+                    <a class="btn btn-danger" href="{{url_for('eliminarLink', link=element[1])}}">Eliminar</a>
+                    <a class="btn btn-dark" href="{{url_for('editarLink', link=element[1])}}">Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+{% endblock %}
